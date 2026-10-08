@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaCompilerConfiguration">
+    <option name="separateProdTestSources" value="true" />
+    <profile name="sbt 1" modules="PETSTORE,PETSTORE.main,PETSTORE.test,payroll,payroll.main,payroll.test,petshop,petshop.main,petshop.test,pyroll,pyroll.main,pyroll.test,zio-tapir-demo,zio-tapir-demo.main,zio-tapir-demo.test" />
+  </component>
+</project>
