@@ -1,4 +1,4 @@
-package kafka
+package src.kafka
 
 import zio.ZLayer
 import zio.kafka.producer.{Producer, ProducerSettings}

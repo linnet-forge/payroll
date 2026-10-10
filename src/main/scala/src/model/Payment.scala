@@ -1,8 +1,7 @@
-package model.Payment
+package src.model
 
 import io.circe._
-import io.circe.generic.semiauto.deriveDecoder
-import io.circe.generic.semiauto.deriveEncoder
+import io.circe.generic.semiauto.{deriveDecoder, deriveEncoder}
 
 final case class Payment(id : Long, name : String, category: Category)
 
