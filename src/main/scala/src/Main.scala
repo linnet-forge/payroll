@@ -19,11 +19,11 @@ object Main extends ZIOAppDefault{
           .orElseFail(Response.json("fail")) // тут нужен сервис
         payment <- ZIO.fromEither(decode[Payment](body))
           .orElseFail(Response.json("fail"))
-        _       <- Console.printLine(s"Sending payment ${payment.id}")
+        _       <- Console.printLine(s"Sending payment ${payment.paymentId}")
           .orElseFail(Response.json("fail"))
         _       <- Producer.produce(
           topic           = "payments",
-          key             = payment.id.toString,
+          key             = payment.paymentId.toString,
           value           = payment.asJson.noSpaces,
           keySerializer   = Serde.string,
           valueSerializer = Serde.string
@@ -57,6 +57,7 @@ object Main extends ZIOAppDefault{
     Server.serve(route).provide(
       Server.defaultWithPort(8080),
       producerLayer
-    )<&> consumer
-
+    )
+  /*<&> consumer
+      .provide(consumerLayer)*/
 }
