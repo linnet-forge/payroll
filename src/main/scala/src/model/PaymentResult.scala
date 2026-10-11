@@ -27,12 +27,10 @@ object PaymentStatus {
 
 case class Payment(
                     id: String,
-                    employeeId: String,
                     accountNumber: String,
                     amount: BigDecimal,
                     currency: String,
-                    status: PaymentStatus,
-                    createdAt: java.time.Instant
+                    status: PaymentStatus
                   )
 
 object Payment {
@@ -42,8 +40,7 @@ object Payment {
 
 case class PaymentResult(
                           paymentId: String,
-                          status: PaymentStatus,
-                          processedAt: java.time.Instant
+                          status: PaymentStatus
                         )
 
 object PaymentResult {
